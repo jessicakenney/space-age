@@ -40,5 +40,8 @@
   "bugs": {
     "url": "https://github.com/jessicakenney/space-age/issues"
   },
-  "homepage": "https://github.com/jessicakenney/space-age#readme"
+  "homepage": "https://github.com/jessicakenney/space-age#readme",
+  "dependencies": {
+    "moment": "^2.18.1"
+  }
 }
