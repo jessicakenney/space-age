@@ -1,41 +1,48 @@
 import { moment } from './../node_modules/moment/moment.js';
 
 export class SpaceAge {
-  constructor () {
-    this.todayDate = moment;
+  constructor (birthDate) {
+    this.birthDate = birthDate;
+    this.birthSeconds = this.getDateDiff(birthDate);
   }
 
-  earthYearsToSeconds(years){
-    let seconds = years * 365.25 * 24 * 3600;
-    return seconds;
-  }
+  // earthYearsToSeconds(years){
+  //   let seconds = years * 365.25 * 24 * 3600;
+  //   return seconds;
+  // }
 
   getDateDiff(birthDate){
     let moment = require('moment');
-
     let date = moment(birthDate);
     let now = moment();
     let diffSeconds = now.diff(date,'seconds');
     return  diffSeconds;
   }
 
+  getEarthAge(birthSeconds){
+    return this.secondsToYearsDays(birthSeconds);
+  }
+
   getMercuryAge(birthSeconds){
-    this.secondsToHuman(birthSeconds);
-    return birthSeconds * .24;
+    let mercurySeconds = birthSeconds * 0.24;
+    return this.secondsToYearsDays(mercurySeconds);
   }
 
   getVenusAge(birthSeconds){
-    return birthSeconds * .62;
+    let venusSeconds = birthSeconds * 0.62;
+    return this.secondsToYearsDays(venusSeconds);
   }
 
   getMarsAge(birthSeconds){
-    return birthSeconds * 1.88;
+    let marsSeconds = birthSeconds * 1.88;
+    return this.secondsToYearsDays(marsSeconds);
   }
   getJupiterAge(birthSeconds){
-    return birthSeconds * 11.86;
+    let jupiterSeconds = birthSeconds * 11.86;
+    return this.secondsToYearsDays(jupiterSeconds);
   }
 
-  secondsToHuman(seconds){
+  secondsToYearsDays(seconds){
     let moment = require('moment');
     const daysInAYear = 365.25;
 
@@ -43,10 +50,11 @@ export class SpaceAge {
     let numYears = days/365.25;
     let numDays = days % 365.25;
 
-    let y = numYears.toFixed();
+    let y = numYears - (numYears % 1);
     let d = numDays.toFixed();
     console.log("DEBUG------Human:yr/days  "+y+" "+d);
-    return y;
+    let yearsDays = [y,d];
+    return yearsDays;
   }
 
 }//SpaceAge

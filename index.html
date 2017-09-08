@@ -2,24 +2,40 @@
 <html>
   <head>
     <link rel="stylesheet" href="build/css/vendor.css">
+    <link href="css/main.css" rel="stylesheet" text="text/css">
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
     <title> Space Age </title>
   </head>
   <body>
     <div class="container">
-      <h1>Age Calculator</h1>
-      <form id="birthdate">
-        <div class="form-group">
-          <label for="birthdate">Date of Birth</label>
-          <input id="birthdate" type="text">
-          <button class="btn-success" type="submit" name="btn">Submit</button>
-        </div>
-      </form>
+      <div class="well" id="inputForm">
+        <h1>Space Age Calculator</h1>
+        <form id="birthDate">
+          <div class="form-group">
+            <label for="birthDate">Date of Birth</label>
+            <input class="form-control" id="birthDate" name="birthDate" type="date" required>
+            <button class="btn-success" type="submit" name="btn">Enter</button>
+          </div>
+        </form>
+      </div>
+      <div class="well" id="results">
+        <h3>Current Date: </h3>
+          <p><span id="current"></span></p>
+        <h3>Date of Birth: </h3>
+          <p><span id="inputDate"></span></p>
+        <h3>Age: Earth </h3>
+          <p><span id="earthAge"></span></p>
+        <h3>Age: Mercury </h3>
+          <p><span id="mercuryAge"></span></p>
+        <h3>Age: Venus </h3>
+          <p><span id="venusAge"></span></p>
+        <h3>Age: Mars </h3>
+          <p><span id="marsAge"></span></p>
+        <h3>Age: Jupiter </h3>
+          <p><span id="jupiterAge"></span></p>
+      </div>
 
-      <p>Your age: <span id="earthAge"></span></p>
-      <h3>Here is the time:</h3>
-      <h3 id="time"></h3>
     </div>
   </body>
 </html>
