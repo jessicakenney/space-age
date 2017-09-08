@@ -28,5 +28,20 @@ describe('SpaceAge', function() {
     expect(spaceAge.getMercuryAge(expected)).toEqual(expected * .24);
   });
 
+  it('should return venus seconds', function() {
+    let expected = now.diff(testDate,'seconds');
+    expect(spaceAge.getVenusAge(expected)).toEqual(expected * .62);
+  });
+
+  it('should return mars seconds', function() {
+    let expected = now.diff(testDate,'seconds');
+    expect(spaceAge.getMarsAge(expected)).toEqual(expected * 1.88);
+  });
+
+  it('should return jupiter seconds', function() {
+    let expected = now.diff(testDate,'seconds');
+    expect(spaceAge.getJupiterAge(expected)).toEqual(expected * 11.86);
+  });
+
 
 });
