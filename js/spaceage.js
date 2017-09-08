@@ -15,18 +15,38 @@ export class SpaceAge {
 
     let date = moment(birthDate);
     let now = moment();
-    //let dateStr = moment(birthDate).format('YYYY-MM-DD');
-    //let nowStr = moment().format('YYYY-MM-DD');
-    //let diffYear = now.diff(date,'years');
-    //let diffMos = now.diff(date,'months');
-    //let diffDays = now.diff(date,'days');
     let diffSeconds = now.diff(date,'seconds');
-    //console.log("DEBUG------YEAR:  "+diffYear);
-    //console.log("DEBUG------MOS:   "+diffMos);
-    //console.log("DEBUG------Days:  "+diffDays);
-    //console.log("DEBUG------Seconds:  "+diffSeconds);
-
     return  diffSeconds;
+  }
+
+  getMercuryAge(birthSeconds){
+    this.secondsToHuman(birthSeconds);
+    return birthSeconds * .24;
+  }
+
+  getVenusAge(birthSeconds){
+    return birthSeconds * .62;
+  }
+
+  getMarsAge(birthSeconds){
+    return birthSeconds * 1.88;
+  }
+  getJupiterAge(birthSeconds){
+    return birthSeconds * 11.86;
+  }
+
+  secondsToHuman(seconds){
+    let moment = require('moment');
+    const daysInAYear = 365.25;
+
+    let days = moment.duration(seconds,'seconds').asDays();
+    let numYears = days/365.25;
+    let numDays = days % 365.25;
+
+    let y = numYears.toFixed();
+    let d = numDays.toFixed();
+    console.log("DEBUG------Human:yr/days  "+y+" "+d);
+    return y;
   }
 
 }//SpaceAge
