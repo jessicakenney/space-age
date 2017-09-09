@@ -47,5 +47,15 @@ describe('SpaceAge', function() {
     expect(spaceAge.getJupiterAge(expected)).toEqual(exp);
   });
 
+  it('should return life expectancy', function() {
+    expect(spaceAge.getLifeExpectancy("female")).toEqual(75);
+  });
+
+  it('should return correct planet years remaining', function() {
+    let expected = now.diff(testDate,'seconds');
+    let exp = spaceAge.secondsToYearsDays(expected);
+    expect(spaceAge.getPlanetYearsRemaining("Earth")).toEqual(58);
+  });
+
 
 });

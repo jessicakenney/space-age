@@ -4,9 +4,30 @@ body {
   background-size: cover;
   background-attachment: fixed;
   color: black;
+  font-family: 'Rajdhani', sans-serif;
 }
 .well {
-  /*background-color:*/
+  background-color: #d3aa7e;
+  /*background-color: #F1CD00;*/
   display: block;
   width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.shift{
+  text-align: center;
+}
+th {
+  font-weight: bold;
+  font-size: 18px;
+}
+h1 {
+  color: white;
+  text-align: center;
+  padding-bottom: 40px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 100px;
+}
+.table-hover > tbody > tr:hover {
+  background-color: #D2D2D2;
 }

@@ -3,39 +3,83 @@
   <head>
     <link rel="stylesheet" href="build/css/vendor.css">
     <link href="css/main.css" rel="stylesheet" text="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
     <title> Space Age </title>
   </head>
   <body>
     <div class="container">
-      <div class="well" id="inputForm">
-        <h1>Space Age Calculator</h1>
-        <form id="birthDate">
-          <div class="form-group">
-            <label for="birthDate">Date of Birth</label>
-            <input class="form-control" id="birthDate" name="birthDate" type="date" required>
-            <button class="btn-success" type="submit" name="btn">Enter</button>
+      <h1>Space Age</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="well" id="inputForm">
+            <form id="birthDate">
+              <div class="form-group">
+                <label for="birthDate">Date of Birth</label>
+                <input class="form-control" id="birthDate" name="birthDate" type="date" required>
+                <br>
+                <p>Life expectancy stats</p>
+                <hr>
+                <label class="radio-inline"><input type="radio" name="sex" value="female">Female</label>
+                <label class="radio-inline"><input type="radio" name="sex" value="male">Male</label>
+                <hr>
+                <label class="radio-inline"><input type="radio" name="region" value="developed">Developed</label>
+                <label class="radio-inline"><input type="radio" name="region" value="latinAmerica">Latin America</label>
+                <label class="radio-inline"><input type="radio" name="region" value="africa">Africa</label>
+                <label class="radio-inline"><input type="radio" name="region" value="asia">Asia</label>
+                <label class="radio-inline"><input type="radio" name="region" value="average">Average</label>
+                <hr>
+                <div class="shift">
+                  <button class="btn-success" type="submit" name="btn">Enter</button>
+                </div>
+              </div>
+            </form>
           </div>
-        </form>
+        </div>
+        <div class="col-md-6">
+          <div class="well" id="table">
+            <table class="table table-hover table-bordered">
+              <thead>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Current Date</th>
+                  <td><span id="current"></span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Date of Birth</th>
+                  <td><span id="inputDate"></span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Life Expectancy</th>
+                  <td><span id="lifeExp"></span</td>
+                </tr>
+                <tr>
+                  <th scope="row">Age: Earth</th>
+                  <td><span id="earthAge"></span><small><em><span id="earthYrRemain"></span></em></small></td>
+                </tr>
+                <tr>
+                  <th scope="row">Age: Mercury</th>
+                  <td><span id="mercuryAge"></span><small><em><span id="mercuryYrRemain"></span></em></small></td>
+                </tr>
+                <tr>
+                  <th scope="row">Age: Venus</th>
+                  <td><span id="venusAge"></span><small><em><span id="venusYrRemain"></span></em></small></td>
+                </tr>
+                <tr>
+                  <th scope="row">Age: Mars</th>
+                  <td><span id="marsAge"></span><small><em><span id="marsYrRemain"></span></em></small></td>
+                </tr>
+                <tr>
+                  <th scope="row">Age: Jupiter</th>
+                  <td><span id="jupiterAge"></span><small><em><span id="jupiterYrRemain"></span></em></small></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="well" id="results">
-        <h3>Current Date: </h3>
-          <p><span id="current"></span></p>
-        <h3>Date of Birth: </h3>
-          <p><span id="inputDate"></span></p>
-        <h3>Age: Earth </h3>
-          <p><span id="earthAge"></span></p>
-        <h3>Age: Mercury </h3>
-          <p><span id="mercuryAge"></span></p>
-        <h3>Age: Venus </h3>
-          <p><span id="venusAge"></span></p>
-        <h3>Age: Mars </h3>
-          <p><span id="marsAge"></span></p>
-        <h3>Age: Jupiter </h3>
-          <p><span id="jupiterAge"></span></p>
-      </div>
-
     </div>
   </body>
 </html>
