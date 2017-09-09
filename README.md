@@ -33,7 +33,7 @@ email with any questions: jessicakenney@yahoo.com,
 ## Known Issues/Bugs
 
 ## Technologies Used
-Java, Spark, Handlebars
+JavaScript, ES6,Karma,Jasmine
 
 ### Legal
 This software is licensed under MIT Copyright (c) 2017 Jessica Sheridan
