@@ -19,37 +19,36 @@ export class SpaceAge {
     return  diffSeconds;
   }
 
-  getEarthAge(birthSeconds){
-    return this.secondsToYearsDays(birthSeconds);
+  getEarthAge(){
+    return this.secondsToYearsDays(this.birthSeconds);
   }
 
-  getMercuryAge(birthSeconds){
-    let mercurySeconds = birthSeconds * 0.24;
+  getMercuryAge(){
+    let mercurySeconds = this.birthSeconds/0.24;
     return this.secondsToYearsDays(mercurySeconds);
   }
 
-  getVenusAge(birthSeconds){
-    let venusSeconds = birthSeconds * 0.62;
+  getVenusAge(){
+    let venusSeconds = this.birthSeconds/0.62;
     return this.secondsToYearsDays(venusSeconds);
   }
 
   getMarsAge(birthSeconds){
-    let marsSeconds = birthSeconds * 1.88;
+    let marsSeconds = birthSeconds/1.88;
     return this.secondsToYearsDays(marsSeconds);
   }
+
   getJupiterAge(birthSeconds){
-    let jupiterSeconds = birthSeconds * 11.86;
+    let jupiterSeconds = birthSeconds/11.86;
     return this.secondsToYearsDays(jupiterSeconds);
   }
 
   secondsToYearsDays(seconds){
     let moment = require('moment');
     const daysInAYear = 365.25;
-
     let days = moment.duration(seconds,'seconds').asDays();
     let numYears = days/365.25;
     let numDays = days % 365.25;
-
     let y = numYears - (numYears % 1);
     let d = numDays.toFixed();
     console.log("DEBUG------Human:yr/days  "+y+" "+d);

@@ -1,6 +1,6 @@
-# Space Age Calculator 
+# Space Age Calculator
 
-##### Epicodus Section: JavaScript Week BDD with Jasmine/Karma 
+##### Epicodus Section: JavaScript Week BDD with Jasmine/Karma
 
 ### By Jessica Sheridan
 
@@ -8,9 +8,9 @@
 
 Enter your birthdate and see how old you would be on a different planet. A solar year
 lasts 365 days on planet Earth, however varies from planet to planet. Mercury solar
-year lasts 88 days.
+year lasts only 88 days.The calculator determines how many years a user has left to live on each planet by determining the user's life expectancy based on their sex.
 
-## Test Plan 
+## Test Plan
 
 | Behavior      | Input | Output |
 | ------------- | ------------- | ------------- |

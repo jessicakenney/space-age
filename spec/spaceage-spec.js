@@ -8,7 +8,7 @@ describe('SpaceAge', function() {
     var now;
 
   beforeEach(function() {
-    testDate = "2000-04-08";
+    testDate = "2000-09-08";
     spaceAge = new SpaceAge(testDate);
     date = moment(testDate);
     now = moment();
@@ -25,25 +25,25 @@ describe('SpaceAge', function() {
 
   it('should return mercury seconds', function() {
     let expected = now.diff(testDate,'seconds');
-    let exp = spaceAge.secondsToYearsDays(expected * 0.24);
+    let exp = spaceAge.secondsToYearsDays(expected/0.24);
     expect(spaceAge.getMercuryAge(expected)).toEqual(exp);
   });
 
   it('should return venus seconds', function() {
     let expected = now.diff(testDate,'seconds');
-    let exp = spaceAge.secondsToYearsDays(expected * 0.62);
+    let exp = spaceAge.secondsToYearsDays(expected/0.62);
     expect(spaceAge.getVenusAge(expected)).toEqual(exp);
   });
 
   it('should return mars seconds', function() {
     let expected = now.diff(testDate,'seconds');
-    let exp = spaceAge.secondsToYearsDays(expected * 1.88);
+    let exp = spaceAge.secondsToYearsDays(expected/1.88);
     expect(spaceAge.getMarsAge(expected)).toEqual(exp);
   });
 
   it('should return jupiter seconds', function() {
     let expected = now.diff(testDate,'seconds');
-    let exp = spaceAge.secondsToYearsDays(expected * 11.86);
+    let exp = spaceAge.secondsToYearsDays(expected/11.86);
     expect(spaceAge.getJupiterAge(expected)).toEqual(exp);
   });
 
