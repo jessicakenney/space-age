@@ -8,7 +8,9 @@
 
 Enter your birthdate and see how old you would be on a different planet. A solar year
 lasts 365 days on planet Earth, however varies from planet to planet. Mercury solar
-year lasts only 88 days.The calculator determines how many years a user has left to live on each planet by determining the user's life expectancy based on their sex.
+year lasts only 88 days.The calculator determines how many years a user has left to live on each planet 
+by determining the user's life expectancy based on their sex and the decade which they were
+born.
 
 ## Test Plan
 
@@ -20,8 +22,9 @@ year lasts only 88 days.The calculator determines how many years a user has left
 | Return age earthling in Venus Years| earthAge | planetAge |
 | Return age earthling in Mars Years| earthAge | planetAge |
 | Return age earthling in Jupiter Years| earthAge | planetAge |
-| Determine User Life Expectancy |  |  |
-| How many years left on each Planet |  |  |
+| Determine User Life Expectancy | age,birthyear  |  |
+| How many years left on each Planet | lifeExpectancy-PlanetAge |  |
+| Record if user has Exceeded LE on a planet| lifeExpectancy-PlanetAge | Exceeds! |
 
 
 ## Setup

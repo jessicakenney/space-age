@@ -12,13 +12,9 @@ describe('SpaceAge', function() {
     testDate = "2000-09-08";
     sex = "female";
     spaceAge = new SpaceAge(testDate,sex);
-    date = moment(testDate);
+    date = moment(testDate,"YYYY-MM-DD");
     now = moment();
   });
-
-  // it('should return number of seconds in a year ', function() {
-  //   expect(spaceAge.earthYearsToSeconds(5)).toEqual(157788000);
-  // });
 
   it('should return date diff ', function() {
     let expected = now.diff(testDate,'seconds');

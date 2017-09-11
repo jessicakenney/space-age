@@ -4,12 +4,12 @@ export class SpaceAge {
   constructor (birthDate,sex) {
     this.birthDate = birthDate;
     this.sex = sex;
-    this.birthSeconds = this.getDateDiff(birthDate);
+    this.birthSeconds = this.getDateDiff();
   }
 
   getDateDiff(){
     let moment = require('moment');
-    let date = moment(this.birthDate);
+    let date = moment(this.birthDate,"YYYY-MM-DD");
     let now = moment();
     let diffSeconds = now.diff(date,'seconds');
     return  diffSeconds;
@@ -18,15 +18,11 @@ export class SpaceAge {
   getPlanetYearsRemaining(planet){
     let yrsleft;
     let planetAge = this.getPlanetAge(planet);
-    console.log("  planetAge -->"+planetAge+" "+planet);
     if ( planetAge >= this.getLifeExpectancy()) {
       yrsleft = "Exceeded! ";
     } else {
       yrsleft = (this.getLifeExpectancy() - planetAge).toFixed(0);
     }
-    console.log("DEBUG---getLifeExp>"+this.getLifeExpectancy());
-    console.log("DEBUG---getPlanetAge    >"+planetAge);
-    console.log("DEBUG---yrsLeft>"+yrsleft);
     return yrsleft;
   }
 
@@ -42,7 +38,6 @@ export class SpaceAge {
   }
 
   getPlanetAge(planet){
-    console.log("PLANET AGE:  "+planet+" "+this.birthSeconds);
     let planetConst  = this.getPlanetConst(planet);
     return this.secondsToYears(this.birthSeconds/planetConst);
   }
@@ -60,9 +55,7 @@ export class SpaceAge {
     // Resource:
     //https://www.elderweb.com/book/appendix/1900-2000-changes-life-expectancy-united-states/
     let moment = require('moment');
-    let birthYear = moment(this.birthDate).format('YYYY');
-    console.log("DEBUG____>LE YEAR"+birthYear);
-    console.log("DEBUG____>LE SEX"+this.sex);
+    let birthYear = moment(this.birthDate,"YYYY-MM-DD").format('YYYY');
     let lifeEx;
     let isFemale = 0;
     let isMale = 0;
