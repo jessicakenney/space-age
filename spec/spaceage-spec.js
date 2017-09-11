@@ -6,10 +6,12 @@ describe('SpaceAge', function() {
     var testDate ;
     var date;
     var now;
+    let sex;
 
   beforeEach(function() {
     testDate = "2000-09-08";
-    spaceAge = new SpaceAge(testDate);
+    sex = "female";
+    spaceAge = new SpaceAge(testDate,sex);
     date = moment(testDate);
     now = moment();
   });
@@ -25,37 +27,50 @@ describe('SpaceAge', function() {
 
   it('should return mercury seconds', function() {
     let expected = now.diff(testDate,'seconds');
-    let exp = spaceAge.secondsToYearsDays(expected/0.24);
-    expect(spaceAge.getMercuryAge(expected)).toEqual(exp);
+    let exp = spaceAge.secondsToYears(expected/0.24);
+    expect(spaceAge.getPlanetAge("mercury")).toEqual(exp);
   });
 
   it('should return venus seconds', function() {
     let expected = now.diff(testDate,'seconds');
-    let exp = spaceAge.secondsToYearsDays(expected/0.62);
-    expect(spaceAge.getVenusAge(expected)).toEqual(exp);
+    let exp = spaceAge.secondsToYears(expected/0.62);
+    expect(spaceAge.getPlanetAge("venus")).toEqual(exp);
   });
 
   it('should return mars seconds', function() {
     let expected = now.diff(testDate,'seconds');
-    let exp = spaceAge.secondsToYearsDays(expected/1.88);
-    expect(spaceAge.getMarsAge(expected)).toEqual(exp);
+    let exp = spaceAge.secondsToYears(expected/1.88);
+    expect(spaceAge.getPlanetAge("mars")).toEqual(exp);
   });
 
   it('should return jupiter seconds', function() {
     let expected = now.diff(testDate,'seconds');
-    let exp = spaceAge.secondsToYearsDays(expected/11.86);
-    expect(spaceAge.getJupiterAge(expected)).toEqual(exp);
+    let exp = spaceAge.secondsToYears(expected/11.86);
+    expect(spaceAge.getPlanetAge("jupiter")).toEqual(exp);
   });
 
-  it('should return life expectancy', function() {
-    expect(spaceAge.getLifeExpectancy("female")).toEqual(75);
+  it('should return life expectancy female', function() {
+    expect(spaceAge.getLifeExpectancy()).toEqual(84);
   });
 
-  it('should return correct planet years remaining', function() {
+  it('should return correct planet years remaining female', function() {
     let expected = now.diff(testDate,'seconds');
-    let exp = spaceAge.secondsToYearsDays(expected);
-    expect(spaceAge.getPlanetYearsRemaining("Earth")).toEqual(58);
+    let exp = spaceAge.secondsToYears(expected);
+    expect(spaceAge.getPlanetYearsRemaining("earth")).toEqual('67');
   });
+
+  it('should return life expectancy male', function() {
+    spaceAge = new SpaceAge("1973-05-08","male");
+    expect(spaceAge.getLifeExpectancy()).toEqual(70);
+    expect(spaceAge.getPlanetYearsRemaining("earth")).toEqual('26');
+  });
+
+  it('should return exceeds planet years remaining', function() {
+    let testDate2 = "1935-5-14";
+    let spaceAge = new SpaceAge(testDate2,"female");
+    expect(spaceAge.getPlanetYearsRemaining("earth")).toEqual("Exceeded! ");
+  });
+
 
 
 });

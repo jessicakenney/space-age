@@ -5,42 +5,42 @@ $(document).ready(function() {
   $('#birthDate').submit(function(event) {
     event.preventDefault();
     let inputBirthDate = $("input#birthDate").val();
-    let inputSex = $("input#sex").val();
+    let inputSex = $("input:radio[name=sex]:checked").val();
 
     let spaceAge = new SpaceAge(inputBirthDate,inputSex);
 
-    let earthAge = spaceAge.getEarthAge();
+    let earthAge = spaceAge.getPlanetAge("earth");
     let lifeExp = spaceAge.getLifeExpectancy();
-    let mercuryAge = spaceAge.getMercuryAge();
-    let venusAge = spaceAge.getVenusAge();
-    let marsAge = spaceAge.getMarsAge();
-    let jupiterAge = spaceAge.getJupiterAge();
 
-    let earthYrRemain = spaceAge.getPlanetYearsRemaining("Earth");
-    let mercuryYrRemain = spaceAge.getPlanetYearsRemaining("Mercury");
-    let venusYrRemain = spaceAge.getPlanetYearsRemaining("Venus");
-    let marsYrRemain = spaceAge.getPlanetYearsRemaining("Mars");
-    let jupiterYrRemain = spaceAge.getPlanetYearsRemaining("Jupiter");
+    let mercuryAge = spaceAge.getPlanetAge("mercury");
+    let venusAge = spaceAge.getPlanetAge("venus");
+    let marsAge = spaceAge.getPlanetAge("mars");
+    let jupiterAge = spaceAge.getPlanetAge("jupiter");
 
+    let earthYrRemain = spaceAge.getPlanetYearsRemaining("earth");
+    let mercuryYrRemain = spaceAge.getPlanetYearsRemaining("mercury");
+    let venusYrRemain = spaceAge.getPlanetYearsRemaining("venus");
+    let marsYrRemain = spaceAge.getPlanetYearsRemaining("mars");
+    let jupiterYrRemain = spaceAge.getPlanetYearsRemaining("jupiter");
 
     console.log("DEBUG---->"+inputBirthDate);
     $("#current").text(moment().format('YYYY-MM-DD'));
     $("#inputDate").text(inputBirthDate);
     $("#lifeExp").text(`${lifeExp} years`);
 
-    $("#earthAge").text(`${earthAge[0]} years`);
+    $("#earthAge").text(`${earthAge} years`);
     $("#earthYrRemain").text(`    ${earthYrRemain} years remaining`);
 
-    $("#mercuryAge").text(`${mercuryAge[0]} years`);
+    $("#mercuryAge").text(`${mercuryAge} years`);
     $("#mercuryYrRemain").text(`    ${mercuryYrRemain} years remaining`);
 
-    $("#venusAge").text(`${venusAge[0]} years`);
+    $("#venusAge").text(`${venusAge} years`);
     $("#venusYrRemain").text(`    ${venusYrRemain} years remaining`);
 
-    $("#marsAge").text(`${marsAge[0]} years`);
+    $("#marsAge").text(`${marsAge} years`);
     $("#marsYrRemain").text(`    ${marsYrRemain} years remaining`);
 
-    $("#jupiterAge").text(`${jupiterAge[0]} years`);
+    $("#jupiterAge").text(`${jupiterAge} years`);
     $("#jupiterYrRemain").text(`    ${jupiterYrRemain} years remaining`);
   });
 });

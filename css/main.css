@@ -7,12 +7,18 @@ body {
   font-family: 'Rajdhani', sans-serif;
 }
 .well {
-  background-color: #d3aa7e;
+  background-color: #628479 ;
   /*background-color: #F1CD00;*/
   display: block;
   width: 400px;
   margin-left: auto;
   margin-right: auto;
+}
+.exceeds{
+  color: red;
+}
+.btn{
+  background-color: black;
 }
 .shift{
   text-align: center;
