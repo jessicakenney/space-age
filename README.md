@@ -8,7 +8,7 @@
 
 Enter your birthdate and see how old you would be on a different planet. A solar year
 lasts 365 days on planet Earth, however varies from planet to planet. Mercury solar
-year lasts only 88 days.The calculator determines how many years a user has left to live on each planet 
+year lasts only 88 days.The calculator determines how many years a user has left to live on each planet
 by determining the user's life expectancy based on their sex and the decade which they were
 born.
 
@@ -28,7 +28,26 @@ born.
 
 
 ## Setup
-git clone https://github.com/jessicakenney/space-age.git  
+ * % git clone https://github.com/jessicakenney/space-age.git  
+ * % cd space-age
+ * % npm install
+ * % bower install
+ * % gulp build
+ * % gulp serve
+
+
+![Alt text](images/spaceage0.png)
+
+![Alt text](images/spaceage1.png)
+
+![Alt text](images/spaceage2.png)
+
+## Testing
+
+* % npm test
+
+![Alt text](images/karma.png)
+
 
 ## Support and Contact details
 email with any questions: jessicakenney@yahoo.com,
